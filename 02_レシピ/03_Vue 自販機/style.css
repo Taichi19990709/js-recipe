@@ -1,0 +1,69 @@
+#commodity-lineup{
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+}
+
+#first button {
+  display: inline-block;
+} 
+
+#first-container{
+  display: flex;
+  width:300px;
+  justify-content: space-around;
+}
+
+#whatYouBuy{
+  display: flex;
+}
+
+#drink{
+  margin: 20px;
+}
+
+#whatYouBuy{
+  border: solid 3px;
+  width: 100%;
+  height: 100px;
+}
+
+#drink{
+  border: solid 1px;
+  width: 60px;
+  text-align: center;
+}
+
+#commodity-lineup{
+  border: solid 2px;
+  width: 70%;
+  height: 200px;
+  padding: 20px;
+}
+
+#coke .coke{
+  background-color: red;
+  color: white;
+  line-height: 60px;
+  height: 100px;
+  width: 60px;
+  text-align: center;
+}
+
+#coffee .coffee{
+  background-color: black;
+  color: white;
+  line-height: 60px;
+  height: 100px;
+  width:60px;
+  text-align: center;
+}
+
+#tea .tea{
+  background-color: green;
+  color: white;
+  line-height: 60px;
+  height: 100px;
+  width:60px;
+  text-align: center;
+}

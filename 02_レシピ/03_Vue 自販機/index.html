@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>自販機</title>
+</head>
+<body>
+  <div id="app">
+
+    <div id="second">
+      <h3>商品一覧</h3>
+      <div id="commodity-lineup">
+        <div id="coke">
+          <div class="coke">
+            <p>コーラ</p>
+          </div>
+          <p>120円</p>
+          <button id="buy" v-on:click="buyCoke" v-if="Drinks.coke > 0">push</button>
+          <button v-else >Sold-Out</button>
+        </div>
+        <div id="tea">
+          <div class="tea">
+            <p>お茶</p>
+          </div>
+          <p>150円</p>
+          <button id="buy" v-on:click="buyTea" v-if="Drinks.tea > 0">push</button>
+          <button v-else >Sold-Out</button>
+        </div>
+        <div id="coffee">
+          <div class="coffee">
+            <p>コーヒー</p>
+          </div>
+          <p>110円</p>
+          <button id="buy" v-on:click="buyCoffee" v-if="Drinks.coffee >0">push</button>
+          <button v-else >Sold-Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="first">
+      <h1>投入金額</h1>
+      <div id="first-container">
+        <div>
+          <input type="text" id="inputElement" v-model="inputElement">
+          <!-- <p v-if="typeof inputElement === 'string'">{{inputElement}}円</p> -->
+          <p v-if="Number(inputElement)*0 == 0">{{Number(inputElement)-Number(inputElement%10)}}円</p>
+          <p v-else-if="inputElement==''||inputElement=='0'">お金を入れてください。</p>
+          <p v-else>無効な貨幣です</p>
+        </div>
+        <button id="otsuri" v-on:click="otsuri">お釣り</button>
+      </div>
+    </div>
+
+    <div id="third">
+      <div id="cash-back">
+        <h3>お釣り</h3>
+        <p v-if="Number(inputElement)%10 !==0 && Number(inputElement)*0 == 0 && Number(inputElement)%10 !== 0">{{Number(inputElement)%10}}</p>
+        <p v-else>{{otsuriMoney}}円</p>
+        <button v-on:click="getMoney">受けとる</button>
+      </div>
+      <div id="whatYouBuy">
+        <div id="drink" v-for="Mydrink in Mydrinks">{{Mydrink}}</div>
+      </div>
+    </div>
+
+    <div id="forth">
+      <h3>所持金</h3>
+      <p>{{wallet}}円</p>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3.2.20"></script>
+  <script src="main.js"></script>
+</body>
+</html>
